@@ -1,26 +1,359 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050812;
+  --foreground: #f4f6ff;
+  --surface: #0a0f1f;
+  --surface-2: #11172e;
+  --border: rgba(255, 255, 255, 0.08);
+  --tint: 255, 255, 255;        /* white tint base for glass / overlays */
+  --tint-strong: 255, 255, 255; /* same for now in dark */
+  /* RED & BLUE brand palette */
+  --accent: #2563eb;     /* royal blue */
+  --accent-2: #60a5fa;   /* light blue */
+  --accent-3: #ef4444;   /* bright red */
+  --accent-4: #fbbf24;   /* gold (rating/sales) */
+}
+
+/* Light theme — toggled by adding .light to <html> */
+html.light {
+  --background: #f4f6ff;
+  --foreground: #0a1024;
+  --surface: #ffffff;
+  --surface-2: #eef1fb;
+  --border: rgba(10, 16, 36, 0.12);
+  --tint: 10, 16, 36;           /* dark tint base for glass */
+  --tint-strong: 10, 16, 36;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border-glow: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-accent-4: var(--accent-4);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  width: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(1600px 900px at 100% -10%, rgba(37, 99, 235, 0.55), transparent 70%),
+    radial-gradient(1400px 800px at -10% 20%, rgba(239, 68, 68, 0.45), transparent 70%),
+    radial-gradient(1200px 700px at 50% 105%, rgba(96, 165, 250, 0.35), transparent 75%),
+    radial-gradient(1000px 700px at 110% 65%, rgba(220, 38, 38, 0.32), transparent 75%),
+    radial-gradient(1000px 700px at -10% 80%, rgba(29, 78, 216, 0.30), transparent 75%),
+    var(--background);
+  background-attachment: fixed;
+}
+
+html.light body {
+  background:
+    radial-gradient(1600px 900px at 100% -10%, rgba(37, 99, 235, 0.25), transparent 70%),
+    radial-gradient(1400px 800px at -10% 20%, rgba(239, 68, 68, 0.20), transparent 70%),
+    radial-gradient(1200px 700px at 50% 105%, rgba(96, 165, 250, 0.18), transparent 75%),
+    radial-gradient(1000px 700px at 110% 65%, rgba(220, 38, 38, 0.15), transparent 75%),
+    radial-gradient(1000px 700px at -10% 80%, rgba(29, 78, 216, 0.14), transparent 75%),
+    var(--background);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.55);
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #07081200;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2563eb, #ef4444);
+  border-radius: 999px;
+}
+
+/* ---------- Utilities ---------- */
+
+/* Sticky header — opaque enough to hide scrolling banner colors */
+@utility site-header {
+  background: rgba(5, 8, 18, 0.88);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+          backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+@utility glass {
+  background: linear-gradient(180deg, rgba(var(--tint), 0.06), rgba(var(--tint), 0.02));
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(var(--tint), 0.10);
+}
+
+@utility glass-strong {
+  background: linear-gradient(180deg, rgba(var(--tint), 0.10), rgba(var(--tint), 0.03));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(var(--tint), 0.14);
+}
+
+/* Light mode: stronger surface, dark borders */
+html.light .glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(10, 16, 36, 0.10);
+}
+html.light .glass-strong {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+  border: 1px solid rgba(10, 16, 36, 0.12);
+}
+
+/* Light mode: flip white-on-dark text to dark-on-light.
+   Anything that should KEEP white text on a colored background
+   (product card image overlays, gradient banners) uses .keep-white. */
+html.light { color: #0a1024; }
+html.light .text-white { color: #0a1024; }
+html.light .text-white\/95 { color: rgba(10, 16, 36, 0.95); }
+html.light .text-white\/90 { color: rgba(10, 16, 36, 0.90); }
+html.light .text-white\/85 { color: rgba(10, 16, 36, 0.85); }
+html.light .text-white\/80 { color: rgba(10, 16, 36, 0.80); }
+html.light .text-white\/75 { color: rgba(10, 16, 36, 0.75); }
+html.light .text-white\/70 { color: rgba(10, 16, 36, 0.70); }
+html.light .text-white\/65 { color: rgba(10, 16, 36, 0.65); }
+html.light .text-white\/60 { color: rgba(10, 16, 36, 0.60); }
+html.light .text-white\/55 { color: rgba(10, 16, 36, 0.55); }
+html.light .text-white\/50 { color: rgba(10, 16, 36, 0.50); }
+html.light .text-white\/45 { color: rgba(10, 16, 36, 0.45); }
+html.light .text-white\/40 { color: rgba(10, 16, 36, 0.40); }
+html.light .text-white\/30 { color: rgba(10, 16, 36, 0.30); }
+
+/* Inputs / soft tinted surfaces: flip the tint */
+html.light .bg-white\/\[0\.03\] { background-color: rgba(10, 16, 36, 0.03); }
+html.light .bg-white\/\[0\.04\] { background-color: rgba(10, 16, 36, 0.04); }
+html.light .bg-white\/\[0\.05\] { background-color: rgba(10, 16, 36, 0.05); }
+html.light .bg-white\/\[0\.06\] { background-color: rgba(10, 16, 36, 0.06); }
+html.light .bg-white\/\[0\.07\] { background-color: rgba(10, 16, 36, 0.07); }
+html.light .bg-white\/\[0\.08\] { background-color: rgba(10, 16, 36, 0.08); }
+html.light .bg-white\/5    { background-color: rgba(10, 16, 36, 0.05); }
+html.light .placeholder-white\/40::placeholder { color: rgba(10, 16, 36, 0.45); }
+
+/* Borders */
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/\[0\.08\],
+html.light .border-white\/\[0\.10\],
+html.light .border-white\/\[0\.12\] { border-color: rgba(10, 16, 36, 0.10); }
+html.light .border-white\/15,
+html.light .border-white\/\[0\.145\],
+html.light .border-white\/18,
+html.light .border-white\/20,
+html.light .border-white\/25 { border-color: rgba(10, 16, 36, 0.18); }
+
+/* Preserve white where intended */
+html.light .keep-white,
+html.light .keep-white * { color: #ffffff; }
+
+/* Header should not be transparent over a light page */
+html.light header.glass,
+html.light header.site-header {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1px 0 rgba(10, 16, 36, 0.06);
+}
+
+/* Footer dark plate in dark mode; soft white plate in light */
+html.light footer {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-top-color: rgba(10, 16, 36, 0.10);
+}
+
+@utility neon-text {
+  text-shadow:
+    0 0 12px rgba(37, 99, 235, 0.55),
+    0 0 28px rgba(239, 68, 68, 0.35);
+}
+
+@utility glow-border {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #2563eb, #60a5fa, #ef4444);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@utility neon-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    radial-gradient(120% 80% at 50% 0%, rgba(37, 99, 235, 0.20), transparent 60%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 40px -10px rgba(37, 99, 235, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 20px 60px -10px rgba(37, 99, 235, 0.55),
+      0 0 30px rgba(239, 68, 68, 0.25);
+  }
+}
+
+@utility cta-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #ef4444 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  box-shadow:
+    0 10px 30px -10px rgba(37, 99, 235, 0.7),
+    0 0 24px rgba(239, 68, 68, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: background-position 0.6s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    background-position: 100% 50%;
+    transform: translateY(-1px);
+    box-shadow:
+      0 14px 40px -10px rgba(37, 99, 235, 0.85),
+      0 0 36px rgba(239, 68, 68, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+@utility cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+  }
+}
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #d6dcff;
+}
+
+@utility grid-pattern {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: -1px -1px;
+}
+
+@utility text-gradient {
+  background: linear-gradient(135deg, #bcd0ff 0%, #ffd1d1 50%, #ffb4b4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-strong {
+  background: linear-gradient(135deg, #2563eb 0%, #60a5fa 45%, #ef4444 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
+  50%      { box-shadow: 0 0 30px 6px rgba(37, 99, 235, 0.0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@utility animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+@utility animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+@utility animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+@utility animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.4s linear infinite;
+}
+@utility animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
 }
