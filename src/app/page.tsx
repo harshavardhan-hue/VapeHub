@@ -87,6 +87,23 @@ export default function Home() {
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <PromoPopup />
 
+      {/* ── Fixed side banners — outside offset wrapper so they hug viewport edges ── */}
+      <div className="hidden 2xl:flex fixed top-0 left-0 w-52 h-screen flex-col gap-1 p-1 z-40 overflow-hidden">
+        <FixedSideBanner src={categoryTiles[0]} alt="Side promo 1" />
+        <FixedSideBanner src={categoryTiles[6]} alt="Side promo 2" />
+        <FixedSideBanner src={categoryTiles[1]} alt="Side promo 3" />
+        <FixedSideBanner src={categoryTiles[7]} alt="Side promo 4" />
+      </div>
+      <div className="hidden 2xl:flex fixed top-0 right-0 w-52 h-screen flex-col gap-1 p-1 z-40 overflow-hidden">
+        <FixedSideBanner src={categoryTiles[3]} alt="Side promo 5" />
+        <FixedSideBanner src={categoryTiles[9]} alt="Side promo 6" />
+        <FixedSideBanner src={categoryTiles[4]} alt="Side promo 7" />
+        <FixedSideBanner src={categoryTiles[10]} alt="Side promo 8" />
+      </div>
+
+      {/* ── Everything below is offset so banners never overlap ── */}
+      <div className="flex flex-col flex-1 2xl:ml-52 2xl:mr-52">
+
       {/* ── Animated Promo Bar ── */}
       <div className="relative overflow-hidden border-b border-white/5 text-[11px] sm:text-[12px]">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#2563eb,#60a5fa,#ef4444,#f59e0b,#2563eb)] bg-[length:300%_100%] animate-bg-pan opacity-90" />
@@ -140,9 +157,9 @@ export default function Home() {
           <nav className="hidden lg:flex items-center gap-6 text-sm text-white/80">
             <a className="text-white font-semibold border-b-2 border-[#2563eb] pb-0.5 transition" href="/">Home</a>
             <a className="hover:text-white transition hover:border-b-2 hover:border-[#ef4444] pb-0.5" href="/shop">Shop</a>
-            <a className="hover:text-white transition pb-0.5" href="#">Deals</a>
-            <a className="hover:text-white transition pb-0.5" href="#">Brands</a>
-            <a className="hover:text-white transition pb-0.5" href="#">New</a>
+            <a className="hover:text-white transition hover:border-b-2 hover:border-[#ef4444] pb-0.5" href="/deals">Deals</a>
+            <a className="hover:text-white transition hover:border-b-2 hover:border-[#a855f7] pb-0.5" href="/brands">Brands</a>
+            <a className="hover:text-white transition hover:border-b-2 hover:border-white/60 pb-0.5" href="/slideshow">Slideshow</a>
             <a className="hover:text-white transition pb-0.5" href="#">Support</a>
           </nav>
           <div className="flex-1 min-w-0 max-w-xl">
@@ -165,22 +182,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ── Fixed side banners ── */}
-      <div className="hidden 2xl:flex fixed top-20 left-0 w-52 h-[calc(100vh-5rem)] flex-col gap-1 p-1 z-30 overflow-hidden">
-        <FixedSideBanner src={categoryTiles[0]} alt="Side promo 1" />
-        <FixedSideBanner src={categoryTiles[6]} alt="Side promo 2" />
-        <FixedSideBanner src={categoryTiles[1]} alt="Side promo 3" />
-        <FixedSideBanner src={categoryTiles[7]} alt="Side promo 4" />
-      </div>
-      <div className="hidden 2xl:flex fixed top-20 right-0 w-52 h-[calc(100vh-5rem)] flex-col gap-1 p-1 z-30 overflow-hidden">
-        <FixedSideBanner src={categoryTiles[3]} alt="Side promo 5" />
-        <FixedSideBanner src={categoryTiles[9]} alt="Side promo 6" />
-        <FixedSideBanner src={categoryTiles[4]} alt="Side promo 7" />
-        <FixedSideBanner src={categoryTiles[10]} alt="Side promo 8" />
-      </div>
-
       {/* ── Body ── */}
-      <div className="flex-1 mt-4 sm:mt-6 px-3 sm:px-6 2xl:px-0 2xl:ml-52 2xl:mr-52">
+      <div className="flex-1 mt-4 sm:mt-6 px-3 sm:px-6">
         <div className="flex flex-col lg:flex-row gap-5">
 
           {/* ── Sidebar ── */}
@@ -613,6 +616,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      </div>{/* end 2xl offset wrapper */}
     </div>
   );
 }

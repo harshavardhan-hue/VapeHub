@@ -62,7 +62,7 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#3b1c5a] to-[#7f1d1d] flex items-center justify-center p-4 sm:p-8 transition-colors duration-500 relative overflow-hidden">
+    <div className="keep-white isolate min-h-screen bg-gradient-to-br from-[#0f172a] via-[#3b1c5a] to-[#7f1d1d] flex items-center justify-center p-4 sm:p-8 relative overflow-hidden">
 
       <SplashCursor />
       <TargetCursor targetSelector="input, select, button, a, .cursor-target" />

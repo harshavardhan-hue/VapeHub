@@ -166,9 +166,9 @@ html.light .border-white\/18,
 html.light .border-white\/20,
 html.light .border-white\/25 { border-color: rgba(10, 16, 36, 0.18); }
 
-/* Preserve white where intended */
+/* Preserve white where intended — !important beats per-class light-mode overrides */
 html.light .keep-white,
-html.light .keep-white * { color: #ffffff; }
+html.light .keep-white * { color: #ffffff !important; }
 
 /* Header should not be transparent over a light page */
 html.light header.glass,
