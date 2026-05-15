@@ -156,6 +156,94 @@ const products = [
     reviews: 57,
     img: "https://s1.phantasm.host/storage/layouts/921aLl70h8ktb5O8Mc08tVI8l0IYZKqOmXTHS8zQ.avif",
   },
+  {
+    id: 13,
+    name: "Geek Bar Pulse X 15000 Tropical",
+    price: 16.99,
+    original: 21.99,
+    category: "Disposable",
+    badge: "SALE",
+    rating: 4.8,
+    reviews: 412,
+    img: "https://s1.phantasm.host/storage/layouts/Z3c4aFwVZriAA3altiMDaC01ix9L3Q9l1x0yDERU.avif",
+  },
+  {
+    id: 14,
+    name: "King Palm Mini Rolls 2pk",
+    price: 4.99,
+    original: null,
+    category: "Smoke Shop",
+    badge: "NEW",
+    rating: 4.6,
+    reviews: 198,
+    img: "https://s1.phantasm.host/storage/layouts/KhcVFpRCASoxX8SZyo2m7FmUFaW83V2PwG60LwXz.avif",
+  },
+  {
+    id: 15,
+    name: "RAW Classic Cone 1¼ 50pk",
+    price: 11.99,
+    original: 14.99,
+    category: "Smoke Shop",
+    badge: "SALE",
+    rating: 4.7,
+    reviews: 523,
+    img: "https://s1.phantasm.host/storage/layouts/9fgeGyhKVCY0pc0d2srrWkhnLh8cTI2xnUHCWuvu.avif",
+  },
+  {
+    id: 16,
+    name: "Lookah Octopus Electric Nectar Collector",
+    price: 59.99,
+    original: 74.99,
+    category: "Glass",
+    badge: "HOT",
+    rating: 4.9,
+    reviews: 87,
+    img: "https://s1.phantasm.host/storage/layouts/Q3dULtUskW6FLdPMZT4avtkGswxZ2pTG0hPDvn86.avif",
+  },
+  {
+    id: 17,
+    name: "Modus Mushroom Gummies 5000mg",
+    price: 24.99,
+    original: 29.99,
+    category: "Mushroom",
+    badge: "HOT",
+    rating: 4.8,
+    reviews: 163,
+    img: "https://s1.phantasm.host/storage/layouts/LPkzY7gDHOyQj1MpbdnZD1vFuuAaNIZRItaWYaW5.avif",
+  },
+  {
+    id: 18,
+    name: "Nicotine Pouches On! 6mg Cool Mint",
+    price: 5.99,
+    original: null,
+    category: "Nicotine Pouches",
+    badge: "NEW",
+    rating: 4.5,
+    reviews: 241,
+    img: "https://s1.phantasm.host/storage/layouts/cWAXgLfkOGzVVVNywKhxE0QIJbqgEJKQwrud4SXj.avif",
+  },
+  {
+    id: 19,
+    name: "Delta Drink Haze Energy 12oz Can",
+    price: 7.99,
+    original: 9.99,
+    category: "Delta Drinks",
+    badge: "SALE",
+    rating: 4.4,
+    reviews: 76,
+    img: "https://s1.phantasm.host/storage/layouts/4VAsbSHTssDtwQ2J0jJpQHN04WwubNJSFvpOwDLr.avif",
+  },
+  {
+    id: 20,
+    name: "Ketatabz 100mg Tablets 30ct",
+    price: 36.99,
+    original: 44.99,
+    category: "Ketatabz",
+    badge: "HOT",
+    rating: 4.7,
+    reviews: 134,
+    img: "https://s1.phantasm.host/storage/layouts/Je10EsPJfqLp84O6HedmMgBZkuaqkFXiisHE7CDJ.avif",
+  },
 ];
 
 const badgeColor: Record<string, string> = {
@@ -270,34 +358,8 @@ export default function ShopPage() {
         </div>
       </section>
 
-      {/* ── Fixed side banners ── */}
-      <div className="hidden 2xl:flex fixed top-20 left-0 w-52 h-[calc(100vh-5rem)] flex-col gap-1 p-1 z-30 overflow-hidden">
-        {["https://s1.phantasm.host/storage/layouts/SGpKSWMtmOFg3AGMtA5s8PhXjYN2bnp5FOHq7SRD.avif",
-          "https://s1.phantasm.host/storage/layouts/AD5mrQ6YiH0beQM8nyNeUZSPNn1Kh0umBTU2Qstv.avif",
-          "https://s1.phantasm.host/storage/layouts/nBTebPVYEHymLDies5vJ6i62RhrW6asTO7JSDWV3.avif",
-          "https://s1.phantasm.host/storage/layouts/AvtnXPaycvOKR5CzvDVN3DmhZJ461a75xqFNynrB.avif",
-        ].map((src, i) => (
-          <a key={i} href="#" className="relative flex-1 block overflow-hidden rounded-xl border border-white/10 hover:border-white/25 transition group min-h-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt="" className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500" loading="lazy" />
-          </a>
-        ))}
-      </div>
-      <div className="hidden 2xl:flex fixed top-20 right-0 w-52 h-[calc(100vh-5rem)] flex-col gap-1 p-1 z-30 overflow-hidden">
-        {["https://s1.phantasm.host/storage/layouts/qm6D2upUJQFaawFbGR80MrNuHZdZmJmqOSze4yYX.avif",
-          "https://s1.phantasm.host/storage/layouts/2026/03/V4MnX2kBxkR0bzEDw7wYNEsI6aU1AGOZLY93RNLl.gif",
-          "https://s1.phantasm.host/storage/layouts/pluQi49ubpMIlhg7yFcMV3Ium0sz9ilguuAMLG2v.avif",
-          "https://s1.phantasm.host/storage/layouts/921aLl70h8ktb5O8Mc08tVI8l0IYZKqOmXTHS8zQ.avif",
-        ].map((src, i) => (
-          <a key={i} href="#" className="relative flex-1 block overflow-hidden rounded-xl border border-white/10 hover:border-white/25 transition group min-h-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt="" className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500" loading="lazy" />
-          </a>
-        ))}
-      </div>
-
       {/* ── Main: filters + products ── */}
-      <div className="flex-1 px-3 sm:px-6 2xl:ml-52 2xl:mr-52 py-8">
+      <div className="flex-1 px-3 sm:px-6 py-8">
         <div className="flex flex-col lg:flex-row gap-6">
 
           {/* ── Filter sidebar ── */}
@@ -374,7 +436,7 @@ export default function ShopPage() {
             {/* Sort / results bar */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
               <p className="text-sm text-white/60">
-                Showing <span className="text-white font-semibold">12</span> of <span className="text-white font-semibold">466</span> products
+                Showing <span className="text-white font-semibold">20</span> of <span className="text-white font-semibold">466</span> products
               </p>
               <div className="flex items-center gap-3">
                 <select className="h-9 rounded-full bg-white/[0.04] border border-white/10 px-4 text-sm text-white outline-none focus:border-[#2563eb] cursor-pointer">
@@ -400,7 +462,7 @@ export default function ShopPage() {
               {products.map((p) => (
                 <a
                   key={p.id}
-                  href="#"
+                  href={`/shop/${p.id}`}
                   className="group relative flex flex-col rounded-2xl overflow-hidden border border-white/10 hover:border-white/25 hover:shadow-[0_20px_60px_-20px_rgba(37,99,235,0.5)] transition bg-white/[0.02]"
                 >
                   {/* Badge */}

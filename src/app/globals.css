@@ -321,6 +321,10 @@ html.light footer {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+@keyframes marquee-fast {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
   50%      { box-shadow: 0 0 30px 6px rgba(37, 99, 235, 0.0); }
@@ -340,6 +344,61 @@ html.light footer {
   from { transform: scaleX(1); }
   to   { transform: scaleX(0); }
 }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes glow-pulse-red {
+  0%, 100% { box-shadow: 0 0 20px rgba(239,68,68,0.5), 0 0 40px rgba(239,68,68,0.2); }
+  50%      { box-shadow: 0 0 40px rgba(239,68,68,0.9), 0 0 80px rgba(239,68,68,0.5); }
+}
+@keyframes glow-pulse-blue {
+  0%, 100% { box-shadow: 0 0 20px rgba(37,99,235,0.5), 0 0 40px rgba(37,99,235,0.2); }
+  50%      { box-shadow: 0 0 40px rgba(37,99,235,0.9), 0 0 80px rgba(37,99,235,0.5); }
+}
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes hero-text-in {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes badge-pop {
+  0%   { opacity: 0; transform: scale(0.6) translateY(10px); }
+  70%  { transform: scale(1.08) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bg-pan {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .popup-countdown {
   animation: shrink-bar 3000ms linear forwards;
 }
@@ -347,11 +406,48 @@ html.light footer {
 @utility animate-marquee {
   animation: marquee 30s linear infinite;
 }
+@utility animate-marquee-fast {
+  animation: marquee-fast 18s linear infinite;
+}
+@utility animate-scroll-x {
+  animation: scroll-x 28s linear infinite;
+}
 @utility animate-pulse-glow {
   animation: pulse-glow 2.5s ease-in-out infinite;
 }
+@utility animate-glow-red {
+  animation: glow-pulse-red 2s ease-in-out infinite;
+}
+@utility animate-glow-blue {
+  animation: glow-pulse-blue 2s ease-in-out infinite;
+}
 @utility animate-float {
   animation: float 4s ease-in-out infinite;
+}
+@utility animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+@utility animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+@utility animate-slide-left {
+  animation: slide-left 0.6s ease-out both;
+}
+@utility animate-slide-right {
+  animation: slide-right 0.6s ease-out both;
+}
+@utility animate-scale-in {
+  animation: scale-in 0.5s ease-out both;
+}
+@utility animate-hero-text {
+  animation: hero-text-in 0.65s cubic-bezier(0.22,1,0.36,1) both;
+}
+@utility animate-badge-pop {
+  animation: badge-pop 0.5s cubic-bezier(0.22,1,0.36,1) both;
+}
+@utility animate-bg-pan {
+  animation: bg-pan 8s ease infinite;
+  background-size: 300% 300%;
 }
 @utility animate-shimmer {
   background: linear-gradient(

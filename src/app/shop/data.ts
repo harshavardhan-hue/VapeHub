@@ -1,0 +1,223 @@
+export const categories = [
+  { name: "All Products", count: 466 },
+  { name: "CBD", icon: "🌿", count: 48 },
+  { name: "Batteries", icon: "🔋", count: 22 },
+  { name: "Glass", icon: "🥃", count: 35 },
+  { name: "Cream Chargers", icon: "🧴", count: 19 },
+  { name: "Disposable", icon: "💨", count: 125, hot: true },
+  { name: "E-Liquids", icon: "💧", count: 89 },
+  { name: "Herb / Concentrate", icon: "🌱", count: 31 },
+  { name: "Hydroxy", icon: "⚗️", count: 14 },
+  { name: "Kratom", icon: "🍃", count: 34, hot: true },
+  { name: "Botanicals", icon: "🌾", count: 27 },
+  { name: "MGM / MG-X", icon: "⚡", count: 18 },
+  { name: "Mushroom", icon: "🍄", count: 23 },
+  { name: "Nicotine Pouches", icon: "🟢", count: 41 },
+  { name: "Vape Shop", icon: "🚭", count: 57 },
+  { name: "Salt Nic", icon: "🧂", count: 33 },
+  { name: "Smoke Shop", icon: "🚬", count: 29 },
+  { name: "Ketatabz", icon: "💊", count: 11 },
+  { name: "Perfumes & Refreshers", icon: "🌸", count: 8 },
+  { name: "Delta Drinks", icon: "🥤", count: 15 },
+];
+
+export const brands = ["Geek Bar", "Lemmons", "KLAZ", "Meta", "Smashhh", "BLNDZ", "RAW", "Buttons"];
+
+export type Product = {
+  id: number;
+  name: string;
+  price: number;
+  original: number | null;
+  category: string;
+  badge: string | null;
+  rating: number;
+  reviews: number;
+  img: string;
+  sku: string;
+  description: string;
+  features: string[];
+  flavors: { name: string; stock: number }[];
+};
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: "Geek Bar Pulse X 25000 Puffs",
+    price: 19.99, original: 24.99, category: "Disposable", badge: "HOT", rating: 4.8, reviews: 234,
+    img: "https://s1.phantasm.host/storage/layouts/SGpKSWMtmOFg3AGMtA5s8PhXjYN2bnp5FOHq7SRD.avif",
+    sku: "GBPX25K", description: "Experience cloud-chasing bliss with the Geek Bar Pulse X — engineered for serious vapers who demand maximum longevity and flavor variety. 25,000 puffs per device, 5% nicotine strength, and a pre-filled 125ml e-liquid reservoir.",
+    features: ["Up to 25,000 Puffs per Device", "5% Nicotine Strength (50mg)", "Pre-filled 125ml E-Liquid", "Dual Mesh Coil Technology", "Rechargeable via USB-C", "LED Battery Indicator"],
+    flavors: [{ name: "Blue Razz Lemon Lime", stock: 71 }, { name: "Strawberry Ice", stock: 29 }, { name: "Baja Slush", stock: 74 }, { name: "Mexico Mango", stock: 55 }, { name: "White Peach Blueberry", stock: 81 }, { name: "Cherry Cola", stock: 151 }, { name: "Bubble Pop", stock: 39 }, { name: "Blueberry Mint", stock: 167 }],
+  },
+  {
+    id: 2,
+    name: "Lemmons Buy 5 Get 1 Free Pack",
+    price: 34.99, original: 41.99, category: "Kratom", badge: "SALE", rating: 4.9, reviews: 178,
+    img: "https://s1.phantasm.host/storage/layouts/3SVEDQXJqTh164ozGGfjE5yGrHyrKObXFQ2v2yiw.avif",
+    sku: "LEM5G1", description: "Lemmons is the premier kratom brand offering top-quality mitragyna speciosa extracts. Buy 5 packs and get 1 absolutely free. Each pack contains a precision-dosed extract for consistent, reliable results.",
+    features: ["Buy 5 Get 1 Free Promo", "Lab Tested & Verified", "Precise Dosage per Packet", "Available in Multiple Flavors", "All Natural Ingredients", "GMP Certified Facility"],
+    flavors: [{ name: "Orange Citrus", stock: 120 }, { name: "Blue Blast", stock: 85 }, { name: "Mango Tango", stock: 43 }, { name: "Pineapple Punch", stock: 67 }, { name: "Strawberry Lemonade", stock: 92 }],
+  },
+  {
+    id: 3,
+    name: "KLAZ Meta Strawberry 100mg",
+    price: 12.99, original: null, category: "E-Liquids", badge: "NEW", rating: 4.7, reviews: 92,
+    img: "https://s1.phantasm.host/storage/layouts/nBTebPVYEHymLDies5vJ6i62RhrW6asTO7JSDWV3.avif",
+    sku: "KLAZ100S", description: "KLAZ Meta delivers premium e-liquid formulas crafted for the discerning vaper. Strawberry 100mg offers a rich, authentic berry profile with a smooth throat hit.",
+    features: ["100mg Nicotine Salt", "30ml Bottle", "50/50 VG/PG Ratio", "Authentic Strawberry Flavor", "Child-Resistant Cap", "Made in USA"],
+    flavors: [{ name: "Strawberry", stock: 200 }, { name: "Blue Razz", stock: 155 }, { name: "Great Grape", stock: 89 }, { name: "Watermelon", stock: 112 }],
+  },
+  {
+    id: 4,
+    name: "Smashhh 480mg Pseudoindoxyl",
+    price: 27.99, original: 32.99, category: "Botanicals", badge: "HOT", rating: 4.6, reviews: 317,
+    img: "https://s1.phantasm.host/storage/layouts/qm6D2upUJQFaawFbGR80MrNuHZdZmJmqOSze4yYX.avif",
+    sku: "SMSH480", description: "Smashhh Extreme Strength Formula — 480mg Pseudoindoxyl per pack for maximum potency. Designed for experienced users seeking extreme results.",
+    features: ["480mg Pseudoindoxyl per Pack", "Extreme Strength Formula", "10 Tablets per Pack", "Fast-Acting Formula", "Lab Tested", "USA Manufactured"],
+    flavors: [{ name: "Original", stock: 200 }, { name: "Watermelon", stock: 134 }, { name: "Grape", stock: 98 }],
+  },
+  {
+    id: 5,
+    name: "BLNDZ Premium 7-Hydroxy 320mg",
+    price: 44.99, original: 54.99, category: "Hydroxy", badge: "SALE", rating: 4.9, reviews: 145,
+    img: "https://s1.phantasm.host/storage/layouts/AvtnXPaycvOKR5CzvDVN3DmhZJ461a75xqFNynrB.avif",
+    sku: "BLNDZ320", description: "BLNDZ Premium 7-Hydroxymitragynine tablets — ultra-premium ingredients, chewable format, sold in all 50 states. No limits, no boundaries.",
+    features: ["320mg per Tablet", "Chewable Ultra Premium Formula", "Sold in All 50 States", "No Limits, No Boundaries", "GMP Certified", "Third-Party Lab Tested"],
+    flavors: [{ name: "Original", stock: 88 }, { name: "Mint", stock: 54 }, { name: "Citrus", stock: 71 }],
+  },
+  {
+    id: 6,
+    name: "RAW Smokeshop Collection Box",
+    price: 22.99, original: null, category: "Smoke Shop", badge: null, rating: 4.5, reviews: 68,
+    img: "https://s1.phantasm.host/storage/layouts/cWAXgLfkOGzVVVNywKhxE0QIJbqgEJKQwrud4SXj.avif",
+    sku: "RAWCBOX", description: "The RAW Smokeshop Collection Box is the ultimate starter kit featuring RAW's signature unrefined rolling papers, tips, trays and accessories.",
+    features: ["Classic Unbleached Rolling Papers", "RAW Perforated Tips 50pk", "RAW Rolling Tray", "RAW Bamboo Rolling Mat", "RAW 98 Special Cones 6pk", "Gift-Ready Box"],
+    flavors: [{ name: "Classic Box", stock: 145 }, { name: "Black Edition Box", stock: 67 }],
+  },
+  {
+    id: 7,
+    name: "Buttons 7-Hydroxymitragynine 50ct",
+    price: 39.99, original: 47.99, category: "Botanicals", badge: "HOT", rating: 4.8, reviews: 203,
+    img: "https://s1.phantasm.host/storage/layouts/AD5mrQ6YiH0beQM8nyNeUZSPNn1Kh0umBTU2Qstv.avif",
+    sku: "BTN7OH50", description: "Buttons Golden Edition — 7-Hydroxymitragynine 50ct bottle. Each button delivers a precise dose of premium 7-OH extract for a consistent experience every time.",
+    features: ["50 Tablets per Bottle", "Premium 7-OH Extract", "Golden Edition Formula", "Precise Dosage", "Child-Resistant Bottle", "Lab Verified Potency"],
+    flavors: [{ name: "Golden Edition", stock: 178 }, { name: "Silver Edition", stock: 92 }, { name: "Black Edition", stock: 55 }],
+  },
+  {
+    id: 8,
+    name: "E-Liquid Blue Raspberry Chew 100ml",
+    price: 15.99, original: 18.99, category: "E-Liquids", badge: "SALE", rating: 4.4, reviews: 112,
+    img: "https://s1.phantasm.host/storage/layouts/pluQi49ubpMIlhg7yFcMV3Ium0sz9ilguuAMLG2v.avif",
+    sku: "ELQ100BR", description: "Blue Raspberry Chew — a candy-inspired e-liquid that perfectly recreates the tangy-sweet blue raspberry experience. 100ml in a unicorn bottle for easy filling.",
+    features: ["100ml Unicorn Bottle", "3mg & 6mg Nicotine Options", "70VG/30PG Blend", "Sub-Ohm Ready", "Blue Raspberry Candy Flavor", "Made in USA"],
+    flavors: [{ name: "3mg", stock: 200 }, { name: "6mg", stock: 175 }, { name: "0mg", stock: 88 }],
+  },
+  {
+    id: 9,
+    name: "Kratom Feel Free Tonic Shot",
+    price: 9.99, original: null, category: "Kratom", badge: "NEW", rating: 4.7, reviews: 389,
+    img: "https://s1.phantasm.host/storage/layouts/4VAsbSHTssDtwQ2J0jJpQHN04WwubNJSFvpOwDLr.avif",
+    sku: "KRTFF001", description: "Feel Free Tonic is a botanical wellness shot featuring full-spectrum kratom extract. Single-serving 57ml bottles for on-the-go convenience.",
+    features: ["57ml Single-Serve Bottle", "Full-Spectrum Extract", "Natural Botanical Formula", "No Artificial Colors", "Convenient On-The-Go Format", "USA Sourced Kratom"],
+    flavors: [{ name: "Original", stock: 350 }, { name: "Tropical", stock: 210 }, { name: "Lemon Lime", stock: 189 }],
+  },
+  {
+    id: 10,
+    name: "META Shroom2 Blue Razz 4900mg",
+    price: 49.99, original: 59.99, category: "Mushroom", badge: "HOT", rating: 4.9, reviews: 271,
+    img: "https://s1.phantasm.host/storage/layouts/2026/03/V4MnX2kBxkR0bzEDw7wYNEsI6aU1AGOZLY93RNLl.gif",
+    sku: "META4900BR", description: "META Shroom2 — the next evolution in functional mushroom gummies. 4900mg blend per pack featuring Lion's Mane, Reishi, and Chaga extracts in a delicious Blue Razz flavor.",
+    features: ["4900mg Mushroom Blend per Pack", "Lion's Mane + Reishi + Chaga", "Buy 5 Get 1 Free Promo", "Vegan Gummy Formula", "No Limits in All 50 States", "Third-Party Tested"],
+    flavors: [{ name: "Blue Razz", stock: 142 }, { name: "Strawberry", stock: 98 }, { name: "Mango", stock: 76 }, { name: "Watermelon", stock: 110 }],
+  },
+  {
+    id: 11,
+    name: "MGM/MG-X Power Formula 30ct",
+    price: 32.99, original: 38.99, category: "MGM / MG-X", badge: "SALE", rating: 4.6, reviews: 84,
+    img: "https://s1.phantasm.host/storage/layouts/Je10EsPJfqLp84O6HedmMgBZkuaqkFXiisHE7CDJ.avif",
+    sku: "MGMX30", description: "MGM/MG-X Power Formula — 30 count bottle of the premium MGM blend. Each tablet is precision dosed for consistent results and maximum effectiveness.",
+    features: ["30 Tablets per Bottle", "Premium MGM Blend", "Power Formula", "Fast-Acting Tablets", "Lab Certified", "Consistent Dosage"],
+    flavors: [{ name: "Original Power", stock: 95 }, { name: "Max Strength", stock: 62 }],
+  },
+  {
+    id: 12,
+    name: "Roxy 10ct Tablet Bottle 160mg",
+    price: 18.99, original: null, category: "Botanicals", badge: "NEW", rating: 4.5, reviews: 57,
+    img: "https://s1.phantasm.host/storage/layouts/921aLl70h8ktb5O8Mc08tVI8l0IYZKqOmXTHS8zQ.avif",
+    sku: "ROXY160", description: "Roxy 160mg tablets — premium botanical extract in a convenient 10-count bottle. Lab tested for purity and potency.",
+    features: ["160mg per Tablet", "10 Count Bottle", "Lab Tested Purity", "Convenient Carry Size", "Premium Botanical Extract", "Child-Resistant Cap"],
+    flavors: [{ name: "Standard", stock: 133 }, { name: "Extra Strength", stock: 78 }],
+  },
+  {
+    id: 13,
+    name: "Geek Bar Pulse X 15000 Tropical",
+    price: 16.99, original: 21.99, category: "Disposable", badge: "SALE", rating: 4.8, reviews: 412,
+    img: "https://s1.phantasm.host/storage/layouts/Z3c4aFwVZriAA3altiMDaC01ix9L3Q9l1x0yDERU.avif",
+    sku: "GBPX15K", description: "Geek Bar Pulse X 15000 Puffs — tropical edition. Enjoy 15,000 puffs of vibrant tropical flavor with dual-mesh coil technology and USB-C recharging.",
+    features: ["15,000 Puffs per Device", "5% Nicotine Strength", "Tropical Flavor Collection", "Dual Mesh Coil", "USB-C Rechargeable", "LED Indicator"],
+    flavors: [{ name: "Tropical Mango", stock: 200 }, { name: "Pineapple Ice", stock: 145 }, { name: "Passion Fruit", stock: 88 }, { name: "Lychee Blast", stock: 67 }],
+  },
+  {
+    id: 14,
+    name: "King Palm Mini Rolls 2pk",
+    price: 4.99, original: null, category: "Smoke Shop", badge: "NEW", rating: 4.6, reviews: 198,
+    img: "https://s1.phantasm.host/storage/layouts/KhcVFpRCASoxX8SZyo2m7FmUFaW83V2PwG60LwXz.avif",
+    sku: "KP2PK", description: "King Palm Mini Rolls — all-natural, slow-burning palm leaf rolls. Each 2-pack includes a corn husk filter for a smooth, clean smoke.",
+    features: ["All-Natural Palm Leaf", "Corn Husk Filter Included", "Slow Burning", "No Glue or Chemicals", "Mini Size ~1g", "Resealable Pack"],
+    flavors: [{ name: "Natural", stock: 500 }, { name: "Mango", stock: 312 }, { name: "Banana Cream", stock: 278 }, { name: "Strawberry", stock: 190 }],
+  },
+  {
+    id: 15,
+    name: "RAW Classic Cone 1¼ 50pk",
+    price: 11.99, original: 14.99, category: "Smoke Shop", badge: "SALE", rating: 4.7, reviews: 523,
+    img: "https://s1.phantasm.host/storage/layouts/9fgeGyhKVCY0pc0d2srrWkhnLh8cTI2xnUHCWuvu.avif",
+    sku: "RAWC50", description: "RAW Classic Pre-Rolled Cones 1¼ Size — 50 pack of the world's most popular pre-rolled cones. Made from unbleached, natural fibers for a pure smoking experience.",
+    features: ["50 Cones per Pack", "1¼ Size", "Unbleached Natural Fiber", "RAW Tips Included", "Eco-Friendly Paper", "Vegan & Non-GMO"],
+    flavors: [{ name: "Classic (50pk)", stock: 400 }, { name: "Black (50pk)", stock: 220 }, { name: "Organic (50pk)", stock: 155 }],
+  },
+  {
+    id: 16,
+    name: "Lookah Octopus Electric Nectar Collector",
+    price: 59.99, original: 74.99, category: "Glass", badge: "HOT", rating: 4.9, reviews: 87,
+    img: "https://s1.phantasm.host/storage/layouts/Q3dULtUskW6FLdPMZT4avtkGswxZ2pTG0hPDvn86.avif",
+    sku: "LOOKAHOC", description: "The Lookah Octopus Electric Nectar Collector features a unique octopus design with a powerful 950mAh battery. Three voltage settings for customized concentrate sessions.",
+    features: ["950mAh Built-in Battery", "3 Voltage Settings (2.8V/3.2V/3.6V)", "Quartz Tip", "Water Bubbler Chamber", "USB-C Charging", "Unique Octopus Design"],
+    flavors: [{ name: "Blue", stock: 34 }, { name: "Green", stock: 28 }, { name: "Purple", stock: 19 }, { name: "Red", stock: 22 }],
+  },
+  {
+    id: 17,
+    name: "Modus Mushroom Gummies 5000mg",
+    price: 24.99, original: 29.99, category: "Mushroom", badge: "HOT", rating: 4.8, reviews: 163,
+    img: "https://s1.phantasm.host/storage/layouts/LPkzY7gDHOyQj1MpbdnZD1vFuuAaNIZRItaWYaW5.avif",
+    sku: "MOD5000", description: "Modus Mushroom Gummies — 5000mg proprietary mushroom blend per bag. Featuring Amanita Muscaria extract and functional adaptogens for a unique experience.",
+    features: ["5000mg Mushroom Blend per Bag", "Amanita Muscaria Extract", "10 Gummies per Bag", "Vegan Formula", "No Artificial Flavors", "Third-Party Lab Tested"],
+    flavors: [{ name: "Mixed Berry", stock: 110 }, { name: "Watermelon", stock: 88 }, { name: "Peach Rings", stock: 72 }, { name: "Blue Razz", stock: 95 }],
+  },
+  {
+    id: 18,
+    name: "Nicotine Pouches On! 6mg Cool Mint",
+    price: 5.99, original: null, category: "Nicotine Pouches", badge: "NEW", rating: 4.5, reviews: 241,
+    img: "https://s1.phantasm.host/storage/layouts/cWAXgLfkOGzVVVNywKhxE0QIJbqgEJKQwrud4SXj.avif",
+    sku: "ON6CM", description: "On! Nicotine Pouches 6mg Cool Mint — a tobacco-free nicotine pouch for a fresh, clean nicotine experience anytime, anywhere. 20 pouches per can.",
+    features: ["6mg Nicotine per Pouch", "20 Pouches per Can", "Tobacco-Free", "Smoke & Spit Free", "Discreet & Slim Pouch", "Cool Mint Flavor"],
+    flavors: [{ name: "Cool Mint 3mg", stock: 300 }, { name: "Cool Mint 6mg", stock: 280 }, { name: "Citrus 3mg", stock: 190 }, { name: "Berry 6mg", stock: 165 }],
+  },
+  {
+    id: 19,
+    name: "Delta Drink Haze Energy 12oz Can",
+    price: 7.99, original: 9.99, category: "Delta Drinks", badge: "SALE", rating: 4.4, reviews: 76,
+    img: "https://s1.phantasm.host/storage/layouts/4VAsbSHTssDtwQ2J0jJpQHN04WwubNJSFvpOwDLr.avif",
+    sku: "DDHAZE12", description: "Haze Delta Energy Drink — infused with Delta-8 THC and natural energy ingredients for a unique uplifting experience. 12oz can, 25mg Delta-8 per serving.",
+    features: ["25mg Delta-8 THC per Can", "Natural Caffeine 80mg", "B-Vitamin Complex", "12oz Can", "Zero Sugar", "Available in Multiple Flavors"],
+    flavors: [{ name: "Original Haze", stock: 98 }, { name: "Tropical Storm", stock: 74 }, { name: "Blue Frost", stock: 55 }],
+  },
+  {
+    id: 20,
+    name: "Ketatabz 100mg Tablets 30ct",
+    price: 36.99, original: 44.99, category: "Ketatabz", badge: "HOT", rating: 4.7, reviews: 134,
+    img: "https://s1.phantasm.host/storage/layouts/Je10EsPJfqLp84O6HedmMgBZkuaqkFXiisHE7CDJ.avif",
+    sku: "KTBZ100", description: "Ketatabz 100mg — premium ketamine-inspired botanical tablets. 30 count bottle with precision dosing for consistent results. Lab tested and verified.",
+    features: ["100mg per Tablet", "30 Count Bottle", "Precision Dosed", "Lab Tested & Verified", "Child-Resistant Bottle", "Premium Formula"],
+    flavors: [{ name: "Standard 100mg", stock: 145 }, { name: "Extra Strength 200mg", stock: 88 }],
+  },
+];

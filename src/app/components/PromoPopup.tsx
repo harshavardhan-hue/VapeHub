@@ -36,19 +36,44 @@ export default function PromoPopup() {
           ×
         </button>
 
-        {/* Banner image */}
-        <a
-          href="#"
-          className="block rounded-2xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(37,99,235,0.7)] border border-white/10"
-        >
+        {/* Card body */}
+        <div className="rounded-2xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(37,99,235,0.7)] border border-white/10 bg-[#0d1117]">
+          {/* Banner image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={POPUP_BANNER}
-            alt="Super Sale — Shop Now"
+            alt="Vape Hub Promo"
             className="w-full h-auto block"
             loading="eager"
           />
-        </a>
+
+          {/* Offer details */}
+          <div className="px-6 py-5 text-center">
+            <p className="text-xs uppercase tracking-[0.2em] text-blue-400 font-semibold mb-1">
+              Limited Time Offer
+            </p>
+            <h2 className="text-3xl font-black text-white mb-1">
+              Buy <span className="text-blue-500">5</span> Get{' '}
+              <span className="text-red-500">1 FREE</span>
+            </h2>
+            <p className="text-sm text-white/60 mb-4">
+              On all selected vape products &amp; accessories. Mix &amp; match any flavours!
+            </p>
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-center">
+                <p className="text-[10px] text-white/40 uppercase tracking-widest">Use Code</p>
+                <p className="text-lg font-black text-white tracking-widest">VAPEHUB10</p>
+              </div>
+              <a
+                href="/shop"
+                onClick={() => setVisible(false)}
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold rounded-lg transition text-sm"
+              >
+                Shop Now →
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* Countdown bar */}
         <div className="mt-3 h-1.5 bg-white/10 rounded-full overflow-hidden">
