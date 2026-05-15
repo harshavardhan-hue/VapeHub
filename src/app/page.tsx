@@ -1,9 +1,10 @@
 /* ──────────────────────────────────────────────────────────────
-   NEBULA — CloudRush-inspired premium e-commerce homepage.
+   Vape Hub — CloudRush-inspired premium e-commerce homepage.
    Dark futuristic theme, neon accents, banner-first layout.
    ────────────────────────────────────────────────────────────── */
 
 import ThemeToggle from "./components/ThemeToggle";
+import PromoPopup from "./components/PromoPopup";
 
 const categories = [
   { name: "CBD", icon: "🌿" },
@@ -70,6 +71,7 @@ const brandTiles = [
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
+      <PromoPopup />
       {/* ───────── Top promo bar ───────── */}
       <div className="relative overflow-hidden border-b border-white/5 text-[11px] sm:text-[12px]">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#2563eb,#60a5fa,#ef4444,#2563eb)] bg-[length:300%_100%] opacity-90 animate-marquee" />
@@ -78,7 +80,7 @@ export default function Home() {
           <span className="opacity-70 hidden sm:inline">·</span>
           <span className="hidden sm:inline">FREE SHIPPING OVER $99</span>
           <span className="opacity-70 hidden md:inline">·</span>
-          <span className="hidden md:inline">10% OFF · <b>NEBULA10</b></span>
+          <span className="hidden md:inline">10% OFF · <b>VAPEHUB10</b></span>
         </div>
       </div>
 
@@ -90,7 +92,7 @@ export default function Home() {
             <span className="relative inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)]">
               <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black text-base sm:text-lg">N</span>
             </span>
-            <span className="hidden sm:inline text-lg sm:text-xl font-black tracking-tight text-gradient">NEBULA</span>
+            <span className="hidden sm:inline text-lg sm:text-xl font-black tracking-tight text-gradient">Vape Hub</span>
           </a>
 
           {/* Nav */}
@@ -135,9 +137,23 @@ export default function Home() {
         </div>
       </header>
 
+      {/* ───────── Fixed side banners — always fill viewport sides ───────── */}
+      <div className="hidden 2xl:flex fixed top-20 left-0 w-52 h-[calc(100vh-5rem)] flex-col gap-1 p-1 z-30 overflow-hidden">
+        <FixedSideBanner src={categoryTiles[0]} alt="Side promo 1" />
+        <FixedSideBanner src={categoryTiles[6]} alt="Side promo 2" />
+        <FixedSideBanner src={categoryTiles[1]} alt="Side promo 3" />
+        <FixedSideBanner src={categoryTiles[7]} alt="Side promo 4" />
+      </div>
+      <div className="hidden 2xl:flex fixed top-20 right-0 w-52 h-[calc(100vh-5rem)] flex-col gap-1 p-1 z-30 overflow-hidden">
+        <FixedSideBanner src={categoryTiles[3]} alt="Side promo 5" />
+        <FixedSideBanner src={categoryTiles[9]} alt="Side promo 6" />
+        <FixedSideBanner src={categoryTiles[4]} alt="Side promo 7" />
+        <FixedSideBanner src={categoryTiles[10]} alt="Side promo 8" />
+      </div>
+
       {/* ───────── BODY: persistent sidebar + main column ───────── */}
-      <div className="mx-auto max-w-[1700px] w-full px-3 sm:px-6 mt-4 sm:mt-6 flex-1">
-        <div className="flex flex-col lg:flex-row gap-5">
+      <div className="flex-1 mt-4 sm:mt-6 px-3 sm:px-6 2xl:ml-52 2xl:mr-52">
+      <div className="flex flex-col lg:flex-row gap-5">
           {/* Persistent left category sidebar — sticky, runs alongside whole page */}
           <aside className="w-full lg:w-72 lg:shrink-0">
             <div className="glass rounded-2xl p-3 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
@@ -218,7 +234,7 @@ export default function Home() {
                 Extra 15% off
                 <br />+ free express
               </p>
-              <button className="mt-3 cta-primary !py-2 !px-4 !text-xs">Join Rewards</button>
+              <button type="button" className="mt-3 cta-primary !py-2 !px-4 !text-xs">Join Rewards</button>
             </div>
             </div>
           </aside>
@@ -377,7 +393,7 @@ export default function Home() {
             </div>
           </section>
           </main>
-        </div>
+      </div>
       </div>
 
       {/* ───────── Footer ───────── */}
@@ -388,7 +404,7 @@ export default function Home() {
               <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)]">
                 <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black">N</span>
               </span>
-              <span className="text-lg font-black tracking-tight text-gradient">NEBULA</span>
+              <span className="text-lg font-black tracking-tight text-gradient">Vape Hub</span>
             </div>
             <p className="mt-3 text-white/60 max-w-sm">
               Premium tech, future-forward shopping. Authorized resellers for 200+ global brands.
@@ -407,7 +423,7 @@ export default function Home() {
         </div>
         <div className="border-t border-white/5">
           <div className="mx-auto max-w-[1700px] px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-            <p>© 2026 Nebula Commerce, Inc. All rights reserved.</p>
+            <p>© 2026 Vape Hub. All rights reserved.</p>
             <div className="flex items-center gap-5">
               <a href="#" className="hover:text-white">Privacy</a>
               <a href="#" className="hover:text-white">Terms</a>
@@ -435,6 +451,7 @@ function IconButton({
 }) {
   return (
     <button
+      type="button"
       aria-label={ariaLabel}
       className="relative h-10 w-10 rounded-full glass flex items-center justify-center text-white/80 hover:text-white hover:bg-white/[0.08] transition"
     >
@@ -489,6 +506,24 @@ function FlankBanner({ src, alt, eager = false }: { src: string; alt: string; ea
         loading={eager ? "eager" : "lazy"}
       />
       <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl" />
+    </a>
+  );
+}
+
+function FixedSideBanner({ src, alt }: { src: string; alt: string }) {
+  return (
+    <a
+      href="#"
+      className="relative flex-1 block overflow-hidden rounded-xl border border-white/10 hover:border-white/25 transition group min-h-0"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"
+        loading="lazy"
+      />
+      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl" />
     </a>
   );
 }

@@ -90,6 +90,8 @@ html.light body {
 }
 
 /* ---------- Utilities ---------- */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* Sticky header — opaque enough to hide scrolling banner colors */
 @utility site-header {
@@ -333,6 +335,13 @@ html.light footer {
 }
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
+}
+@keyframes shrink-bar {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+.popup-countdown {
+  animation: shrink-bar 3000ms linear forwards;
 }
 
 @utility animate-marquee {

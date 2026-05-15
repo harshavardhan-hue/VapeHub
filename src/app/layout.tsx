@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NEBULA — Premium Tech, Future-Forward Shopping",
+  title: "Vape Hub — Premium Vape & Smoke Shop",
   description:
     "Discover the future of shopping. Premium electronics, audio, gaming and lifestyle tech with daily deals, exclusive combos and trending drops.",
 };
