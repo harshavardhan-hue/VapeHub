@@ -97,7 +97,7 @@ export default function Home() {
 
           {/* Nav */}
           <nav className="hidden lg:flex items-center gap-6 text-sm text-white/80">
-            <a className="hover:text-white transition" href="#">Shop</a>
+            <a className="hover:text-white transition" href="/shop">Shop</a>
             <a className="hover:text-white transition" href="#">Deals</a>
             <a className="hover:text-white transition" href="#">Brands</a>
             <a className="hover:text-white transition" href="#">New</a>
