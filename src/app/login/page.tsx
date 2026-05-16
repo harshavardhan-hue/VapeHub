@@ -23,14 +23,17 @@ export default function AuthPage() {
   const [regState, setRegState] = useState('');
   const [regZip, setRegZip] = useState('');
 
+  const [registerSuccess, setRegisterSuccess] = useState(false);
+
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Logging in:', { email, password });
+    document.cookie = 'vh_auth=1; path=/; max-age=86400';
+    window.location.href = '/';
   };
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Registering');
+    setRegisterSuccess(true);
   };
 
   const FileUploadZone = ({ label, required }: { label: string; required?: boolean }) => {
@@ -117,8 +120,12 @@ export default function AuthPage() {
             <div className="overflow-hidden">
               <div className="p-6 sm:p-10 md:p-12 max-w-md mx-auto">
                 <div className="text-center mb-10">
-                  <h2 className="text-3xl font-extrabold text-white mb-2">Welcome Back</h2>
-                  <p className="text-white/60">Enter your credentials to access your VapeHub account.</p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-widest mb-4">
+                    <span className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse inline-block" />
+                    Authorized Wholesale Portal
+                  </div>
+                  <h2 className="text-3xl font-extrabold text-white mb-2">Welcome Back, Partner</h2>
+                  <p className="text-white/60">Sign in to access your wholesale dashboard and pricing.</p>
                 </div>
 
                 <form onSubmit={handleLoginSubmit} className="space-y-6">
@@ -204,10 +211,24 @@ export default function AuthPage() {
             <div className="overflow-hidden">
               <div className="p-6 sm:p-10 md:p-12">
                 <div className="text-center mb-8 max-w-2xl mx-auto">
-                  <h2 className="text-3xl font-extrabold text-white mb-2">Business Registration</h2>
-                  <p className="text-white/60">Join VapeHub to access exclusive wholesale deals and premium products.</p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-bold uppercase tracking-widest mb-4">
+                    <ShieldCheck className="h-3 w-3" />
+                    Wholesale Account Application
+                  </div>
+                  <h2 className="text-3xl font-extrabold text-white mb-2">Apply for Wholesale Access</h2>
+                  <p className="text-white/60">Submit your business credentials for review. Accounts are approved within 1–2 business days.</p>
                 </div>
 
+                {registerSuccess ? (
+                  <div className="text-center py-12 px-8 rounded-2xl bg-white/5 border border-white/10 max-w-lg mx-auto">
+                    <div className="text-5xl mb-4">✅</div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Application Submitted</h3>
+                    <p className="text-white/60 text-sm leading-relaxed">
+                      Thank you for applying. Our team will review your documents and contact you at your business email within <strong className="text-white">1–2 business days</strong>.
+                    </p>
+                    <p className="mt-4 text-xs text-white/40">Questions? Email <span className="text-blue-400">wholesale@vapehub.com</span></p>
+                  </div>
+                ) : (
                 <form onSubmit={handleRegisterSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
 
@@ -372,10 +393,11 @@ export default function AuthPage() {
                       type="submit"
                       className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-purple-600 via-red-600 to-purple-600 bg-[length:200%_auto] hover:bg-[position:100%_0] shadow-[0_0_20px_rgba(239,68,68,0.2)] text-white font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-500 transform hover:scale-[1.02]"
                     >
-                      Submit Registration
+                      Submit Application
                     </button>
                   </div>
                 </form>
+                )}
               </div>
             </div>
           </div>
