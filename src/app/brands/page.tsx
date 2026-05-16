@@ -154,10 +154,9 @@ export default function BrandsPage() {
       <header className="sticky top-0 z-50 site-header border-b border-white/10">
         <div className="mx-auto max-w-[1600px] px-3 sm:px-6 h-14 sm:h-16 flex items-center gap-2 sm:gap-4 lg:gap-6">
           <a href="/" className="flex items-center gap-2 shrink-0">
-            <span className="relative inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)] animate-spin-slow">
-              <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black text-base">V</span>
-            </span>
-            <span className="hidden sm:inline text-lg font-black tracking-tight text-gradient">Vape Hub</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 sm:h-10 w-auto object-contain" />
+            <span className="hidden sm:inline text-base font-black tracking-tight text-gradient">American Distributors LLC</span>
           </a>
           <nav className="hidden lg:flex items-center gap-5 text-sm text-white/80">
             <a className="hover:text-white transition" href="/">Home</a>
@@ -577,12 +576,11 @@ export default function BrandsPage() {
       <footer className="mt-8 border-t border-white/5 bg-[#04050c]/60 backdrop-blur-md">
         <div className="mx-auto max-w-[1600px] px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <div className="flex items-center gap-2">
-            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)]">
-              <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black text-sm">V</span>
-            </span>
-            <span className="font-black tracking-tight text-gradient text-base">Vape Hub</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-7 w-auto object-contain" />
+            <span className="font-black tracking-tight text-gradient text-base">American Distributors LLC</span>
           </div>
-          <p>© 2026 Vape Hub. All rights reserved.</p>
+          <p>© 2026 American Distributors LLC. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <a href="/" className="hover:text-white transition">Home</a>
             <a href="/shop" className="hover:text-white transition">Shop</a>

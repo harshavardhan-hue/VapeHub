@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vape Hub — Premium Vape & Smoke Shop",
+  title: "American Distributors LLC — Wholesale Vape & Smoke Portal",
   description:
-    "Discover the future of shopping. Premium electronics, audio, gaming and lifestyle tech with daily deals, exclusive combos and trending drops.",
+    "Exclusive wholesale portal for authorized vape & smoke distributors. Volume pricing, case packs, Net 30 terms, and 500+ brands.",
 };
 
 const themeInitScript = `try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.add('light');}catch(e){}`;

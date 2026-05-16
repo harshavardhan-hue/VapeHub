@@ -272,10 +272,9 @@ export default function ShopPage() {
       <header className="sticky top-0 z-50 site-header border-b border-white/10">
         <div className="mx-auto max-w-[1700px] px-3 sm:px-6 h-14 sm:h-16 flex items-center gap-2 sm:gap-4 lg:gap-6">
           <a href="/" className="flex items-center gap-2 shrink-0">
-            <span className="relative inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)]">
-              <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black text-base sm:text-lg">V</span>
-            </span>
-            <span className="hidden sm:inline text-lg sm:text-xl font-black tracking-tight text-gradient">Vape Hub</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 sm:h-10 w-auto object-contain" />
+            <span className="hidden sm:inline text-base font-black tracking-tight text-gradient">American Distributors LLC</span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-6 text-sm text-white/80">
@@ -561,10 +560,9 @@ export default function ShopPage() {
         <div className="mx-auto max-w-[1700px] px-6 py-12 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
           <div className="col-span-2">
             <div className="flex items-center gap-2">
-              <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)]">
-                <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black">V</span>
-              </span>
-              <span className="text-lg font-black tracking-tight text-gradient">Vape Hub</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-8 w-auto object-contain" />
+              <span className="text-base font-black tracking-tight text-gradient">American Distributors LLC</span>
             </div>
             <p className="mt-3 text-white/60 max-w-sm">Premium vape &amp; smoke shop. Authorized resellers for 200+ global brands.</p>
             <div className="mt-4 flex items-center gap-2">
@@ -588,7 +586,7 @@ export default function ShopPage() {
         </div>
         <div className="border-t border-white/5">
           <div className="mx-auto max-w-[1700px] px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-            <p>© 2026 Vape Hub. All rights reserved.</p>
+            <p>© 2026 American Distributors LLC. All rights reserved.</p>
             <div className="flex items-center gap-5">
               <a href="#" className="hover:text-white">Privacy</a>
               <a href="#" className="hover:text-white">Terms</a>

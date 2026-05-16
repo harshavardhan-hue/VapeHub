@@ -191,7 +191,7 @@ const wholesaleStats = [
 ];
 
 const testimonials = [
-  { name: "Mike H.", biz: "Summit Smoke Shop · Dallas TX", stars: 5, text: "Switched to Vape Hub wholesale 8 months ago. Our margins jumped from 28% to 41% on disposables. The volume tiers are unmatched.", avatar: "M" },
+  { name: "Mike H.", biz: "Summit Smoke Shop · Dallas TX", stars: 5, text: "Switched to American Distributors 8 months ago. Our margins jumped from 28% to 41% on disposables. The volume tiers are unmatched.", avatar: "M" },
   { name: "Sarah K.", biz: "CloudVape Retail · Austin TX", stars: 5, text: "Gold tier means first allocation on new drops. We haven't run out of a bestseller in 6 months. That's real value.", avatar: "S" },
   { name: "James T.", biz: "GT Distribution · Houston TX", stars: 5, text: "Net 30 terms and a dedicated rep changed our cash flow. This is how a B2B wholesale platform should work.", avatar: "J" },
   { name: "Priya N.", biz: "Texas Smoke Co. · San Antonio TX", stars: 5, text: "Pallet pricing on E-Liquids gave us a 35% retail margin. Our regulars notice the difference — and so does our P&L.", avatar: "P" },
@@ -243,11 +243,10 @@ export default function Home() {
       <header className="sticky top-0 z-50 site-header border-b border-white/10">
         <div className="mx-auto max-w-[1700px] px-3 sm:px-6 h-14 sm:h-16 flex items-center gap-2 sm:gap-4 lg:gap-6">
           <a href="/" className="flex items-center gap-2 shrink-0">
-            <span className="relative inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)] animate-spin-slow">
-              <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black text-base sm:text-lg">V</span>
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 sm:h-10 w-auto object-contain" />
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="text-lg font-black tracking-tight text-gradient">Vape Hub</span>
+              <span className="text-base font-black tracking-tight text-gradient leading-tight">American Distributors LLC</span>
               <span className="text-[9px] text-white/40 font-semibold uppercase tracking-widest">Wholesale Portal</span>
             </div>
           </a>
@@ -932,11 +931,10 @@ export default function Home() {
         <div className="mx-auto max-w-[1700px] px-6 py-12 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
           <div className="col-span-2">
             <div className="flex items-center gap-2">
-              <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#2563eb)]">
-                <span className="absolute inset-[2px] rounded-[10px] bg-[#06070f] flex items-center justify-center text-white font-black">V</span>
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 w-auto object-contain" />
               <div>
-                <span className="text-lg font-black tracking-tight text-gradient block leading-none">Vape Hub</span>
+                <span className="text-base font-black tracking-tight text-gradient block leading-tight">American Distributors LLC</span>
                 <span className="text-[10px] text-white/40 font-semibold uppercase tracking-widest">Wholesale Portal</span>
               </div>
             </div>
@@ -956,11 +954,11 @@ export default function Home() {
           </div>
           <FooterCol title="Wholesale" links={["Place Order", "Case Pricing", "Pallet Deals", "Clearance Lots", "New Arrivals"]} />
           <FooterCol title="Account" links={["My Dashboard", "Order History", "Account Tier", "Payment Terms", "Account Manager"]} />
-          <FooterCol title="Company" links={["About Vape Hub", "Become a Distributor", "TX Compliance", "Authorized Brands", "Contact Sales"]} />
+          <FooterCol title="Company" links={["About Us", "Become a Distributor", "TX Compliance", "Authorized Brands", "Contact Sales"]} />
         </div>
         <div className="border-t border-white/5">
           <div className="mx-auto max-w-[1700px] px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-            <p>© 2026 Vape Hub Wholesale. All rights reserved. · Authorized accounts only.</p>
+            <p>© 2026 American Distributors LLC. All rights reserved. · Authorized accounts only.</p>
             <div className="flex items-center gap-5">
               <a href="#" className="hover:text-white">Privacy</a>
               <a href="#" className="hover:text-white">Terms</a>
