@@ -242,16 +242,9 @@ export default function Home() {
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 site-header border-b border-white/10">
         <div className="mx-auto max-w-[1700px] px-3 sm:px-6 h-14 sm:h-16 flex items-center gap-2 sm:gap-4 lg:gap-6">
-          <a href="/" className="flex items-center gap-3 shrink-0 group">
-            {/* Logo — spinning gradient ring */}
-            <div className="relative inline-flex items-center justify-center shrink-0">
-              <div className="absolute -inset-[2px] rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#fbbf24,#2563eb)] animate-spin-slow opacity-80 group-hover:opacity-100 transition" />
-              <div className="relative bg-[#06070f] rounded-[10px] p-1.5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-8 sm:h-9 w-auto object-contain" />
-              </div>
-            </div>
-            {/* Brand text */}
+          <a href="/" className="flex items-center gap-2.5 shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 sm:h-10 w-auto object-contain" />
             <div className="hidden sm:flex flex-col leading-none gap-1">
               <span className="text-sm font-black tracking-tight text-gradient-strong leading-none">American Distributors LLC</span>
               <div className="flex items-center gap-1.5">
@@ -940,15 +933,9 @@ export default function Home() {
       <footer className="mt-16 border-t border-white/5 bg-[#04050c]/60 backdrop-blur-md">
         <div className="mx-auto max-w-[1700px] px-6 py-12 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
           <div className="col-span-2">
-            <div className="flex items-center gap-3">
-              {/* Footer logo — spinning gradient ring */}
-              <div className="relative inline-flex items-center justify-center shrink-0">
-                <div className="absolute -inset-[2px] rounded-xl bg-[conic-gradient(from_0deg,#2563eb,#60a5fa,#ef4444,#fbbf24,#2563eb)] animate-spin-slow opacity-70" />
-                <div className="relative bg-[#06070f] rounded-[10px] p-1.5">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-8 w-auto object-contain" />
-                </div>
-              </div>
+            <div className="flex items-center gap-2.5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 w-auto object-contain" />
               <div>
                 <span className="text-base font-black tracking-tight text-gradient-strong block leading-none">American Distributors LLC</span>
                 <div className="flex items-center gap-1.5 mt-1">
