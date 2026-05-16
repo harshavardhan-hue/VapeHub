@@ -242,9 +242,9 @@ export default function Home() {
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 site-header border-b border-white/10">
         <div className="mx-auto max-w-[1700px] px-3 sm:px-6 h-14 sm:h-16 flex items-center gap-2 sm:gap-4 lg:gap-6">
-          <a href="/" className="flex items-center gap-2.5 shrink-0">
+          <a href="/" className="flex items-center shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 sm:h-10 w-auto object-contain" />
+            <img src="/ad-logo.svg" alt="American Distributors LLC" className="h-10 sm:h-12 w-auto object-contain animate-logo-glow" />
           </a>
 
           <nav className="hidden lg:flex items-center gap-5 text-sm text-white/80">
@@ -926,16 +926,9 @@ export default function Home() {
       <footer className="mt-16 border-t border-white/5 bg-[#04050c]/60 backdrop-blur-md">
         <div className="mx-auto max-w-[1700px] px-6 py-12 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
           <div className="col-span-2">
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 w-auto object-contain" />
-              <div>
-                <span className="text-base font-black tracking-tight text-gradient-strong block leading-none">American Distributors LLC</span>
-                <div className="flex items-center gap-1.5 mt-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#2563eb] animate-pulse shrink-0" />
-                  <span className="text-[9px] text-[#60a5fa] font-bold uppercase tracking-widest">Wholesale Portal</span>
-                </div>
-              </div>
+              <img src="/ad-logo.svg" alt="American Distributors LLC" className="h-10 w-auto object-contain animate-logo-glow" />
             </div>
             <p className="mt-3 text-white/60 max-w-sm text-sm leading-relaxed">
               Authorized wholesale distributor for 500+ global vape &amp; smoke brands. TX compliant. Serving verified retailers &amp; distributors only.

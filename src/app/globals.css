@@ -462,3 +462,21 @@ html.light footer {
 @utility animate-spin-slow {
   animation: spin-slow 14s linear infinite;
 }
+
+@keyframes adLogoGlow {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 6px rgba(37, 99, 235, 0.85))
+      drop-shadow(0 0 14px rgba(37, 99, 235, 0.45));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 10px rgba(220, 38, 38, 0.80))
+      drop-shadow(0 0 22px rgba(37, 99, 235, 0.50))
+      drop-shadow(0 0 36px rgba(220, 38, 38, 0.25));
+  }
+}
+
+@utility animate-logo-glow {
+  animation: adLogoGlow 3s ease-in-out infinite;
+}

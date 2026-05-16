@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
         <div className="mx-auto max-w-[1700px] px-3 sm:px-6 h-14 sm:h-16 flex items-center gap-2 sm:gap-4 lg:gap-6">
           <a href="/" className="flex items-center gap-2 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://s1.phantasm.host/storage/layouts/kpZKCKHtbspVvwoAENnelAJE7ueZgHNvRCdHCUvj.png" alt="American Distributors LLC" className="h-9 sm:h-10 w-auto object-contain" />
+            <img src="/ad-logo.svg" alt="American Distributors LLC" className="h-10 sm:h-12 w-auto object-contain animate-logo-glow" />
           </a>
           <nav className="hidden lg:flex items-center gap-6 text-sm text-white/80">
             <a className="hover:text-white transition" href="/">Home</a>
